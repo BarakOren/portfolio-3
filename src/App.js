@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef} from "react";
+import styled, {createGlobalStyle} from "styled-components"
+import Introduction from "./components/Introduction/Introduction";
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import "./locomotive-scroll.css";
+import Header from "./components/header/Header";
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+body {
+  padding: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  margin: 0;
+  background: #252525;
+  color: white;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+`;
+
+const AppContainer = styled.div`
+  text-align: center;
+  height: 1000px;
+`;
+
+const App = () =>{
+
+  const containerRef = useRef(null)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocomotiveScrollProvider
+    options={{ smooth: true }}
+    containerRef={containerRef}
+   >
+    <main data-scroll-container className="container">
+    <AppContainer>
+      <Header />
+        <GlobalStyle />
+        <Introduction />
+    </AppContainer>
+    </main>
+    </LocomotiveScrollProvider>
   );
 }
 
