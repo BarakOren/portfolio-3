@@ -6,11 +6,16 @@ import styled from "styled-components";
 const Container = styled.header`
     z-index: 0;
     background-color: transparent;
-    height: 4vw;
+    height: 80px;
     width: 90vw;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 1;
     align-items: center;
     @media only screen and (max-width: 800px){
         display: none;

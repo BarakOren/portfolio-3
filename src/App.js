@@ -1,9 +1,10 @@
 import React, {useRef} from "react";
 import styled, {createGlobalStyle} from "styled-components"
 import Introduction from "./components/Introduction/Introduction";
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-import "./locomotive-scroll.css";
 import Header from "./components/header/Header";
+import { ParallaxProvider } from 'react-scroll-parallax';
+import Summarize from "./components/Summarize/Summarize";
+import Projects from "./components/Projects/Projects";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -20,25 +21,23 @@ body {
 
 const AppContainer = styled.div`
   text-align: center;
-  height: 1000px;
+  padding-bottom: 100vh;
 `;
 
 const App = () =>{
 
-  const containerRef = useRef(null)
   return (
-    <LocomotiveScrollProvider
-    options={{ smooth: true }}
-    containerRef={containerRef}
-   >
-    <main data-scroll-container className="container">
-    <AppContainer>
+    <>
       <Header />
+    <ParallaxProvider>
+    <AppContainer>
         <GlobalStyle />
         <Introduction />
+        <Summarize />
+        <Projects />
     </AppContainer>
-    </main>
-    </LocomotiveScrollProvider>
+    </ParallaxProvider>
+  </>
   );
 }
 

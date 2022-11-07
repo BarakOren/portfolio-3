@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useRef, useState, useEffect, useMemo } from "react";
-import "../../locomotive-scroll.css"
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import { Parallax } from 'react-scroll-parallax';
 
 const Container = styled.div`
   width: 100%;
@@ -15,36 +13,43 @@ const Container = styled.div`
 `
 
 const Name = styled.h1`
-  font-size: 100px;
+  font-size: 120px;
   margin: 0 0;
+  font-family: 'Unica One', cursive;
 `;
 
 const Prof = styled.h1`
   font-size: 60px;
   margin: 0 0;
-
+  font-weight: 300;
 `
 
 const Title = () => {
 
+  const endScroll = 700
+
   return (
     <Container>
-      <Name  data-scroll
-      data-scroll-speed="-20"
-      data-scroll-position="top"
-      data-scroll-direction="horizontal"
-      data-scroll-delay='1.5'
+      <Parallax 
+      startScroll={1}
+      endScroll={endScroll}
+      opacity={[1, 0]}
+      translateX={[0, 70]}
       >
+      <Name>
         Barak Oren
       </Name>
-      <Prof  data-scroll
-      data-scroll-speed="10"
-      data-scroll-position="top"
-      data-scroll-direction="horizontal"
-      data-scroll-delay='1.5'
+      </Parallax>
+      <Parallax
+      startScroll={10}
+      endScroll={endScroll}
+      opacity={[1, 0]}
+      translateX={[0, -50]}
       >
+      <Prof>
         Front End Developer
       </Prof>
+      </Parallax>
     </Container>
 
   );
