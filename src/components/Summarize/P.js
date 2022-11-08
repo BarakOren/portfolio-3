@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Parallax } from 'react-scroll-parallax';
-import { useState } from "react";
 
 const P = styled.p`
     font-size: 24px;
@@ -9,9 +8,8 @@ const P = styled.p`
 
 const Para = (props) => {
     const {text, X, Y} = props;
-    return <Parallax translateY={Y} translateX={X}
-    >
-        <P >
+    return <Parallax translateY={Y} translateX={X}>
+        <P>
             {text}
         </P>
     </Parallax>

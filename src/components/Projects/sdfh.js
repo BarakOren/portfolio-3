@@ -9,16 +9,16 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 50px 0;
 `;
 
 const DetailsContainer = styled.div`
-  width: 45%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid white;
   gap: 30px;
 `;
 
@@ -43,22 +43,19 @@ const Bullet = styled.li`
   font-size: 18px;
 `;
 
-const Project = () => {
+const Project = (props) => {
+  console.log(props)
+  const {name,info,subInfo,image,website,github} = props.project;
   return (
     <Container>
-      <Image />
-
+      <Image img={image}/>
       <DetailsContainer>
-        <Title>Project</Title>
-        <Summarize>
-          gdsjlgjds jlsdg as ds adj jsdg jsdgj sd djsj ssdgjsdls dj sd gjdjdj
-          jsjd jd sjld j gdsjlgjds jlsdg as ds adj jsdg jsdgj sd djsj ssdgjsdls
-          dj sd gjdjdj jsjd jd sjld j
-        </Summarize>
+        <Title>{name}</Title>
+        <Summarize>{info}</Summarize>
         <BulletContainer>
-          <Bullet>slajdg asljdgsa djlg</Bullet>
-          <Bullet>slajdg asljdgsa djlg</Bullet>
-          <Bullet>slajdg asljdgsa djlg</Bullet>
+          {subInfo.map((info, i) => {
+            return <Bullet>{info}</Bullet>
+          })}
         </BulletContainer>
       </DetailsContainer>
     </Container>

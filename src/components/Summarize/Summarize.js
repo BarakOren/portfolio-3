@@ -15,7 +15,7 @@ const Container = styled.div`
 
 
 const Summarize = () => {
-    const Y = ['0px', '200px']
+    const Y = ['-100px', '100px']
     return <Container>
         <Para 
         text={'Adaptable Front-End Developer with 2 years of developing experience.'}
