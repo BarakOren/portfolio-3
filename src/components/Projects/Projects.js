@@ -1,19 +1,21 @@
 import styled from "styled-components";
+import Project from "./sdfh";
 
 const Container = styled.div`
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Projects = () => {
-    return <Container>
-        sdga
+  return (
+    <Container>
+      <Project />
     </Container>
-
-}
+  );
+};
 
 export default Projects;
