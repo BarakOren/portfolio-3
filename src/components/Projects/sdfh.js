@@ -44,7 +44,6 @@ const Bullet = styled.li`
 `;
 
 const Project = (props) => {
-  console.log(props)
   const {name,info,subInfo,image,website,github} = props.project;
   return (
     <Container>
