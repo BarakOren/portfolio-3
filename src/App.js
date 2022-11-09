@@ -12,11 +12,11 @@ body {
   overflow-x: hidden;
   font-family: sans-serif;
   margin: 0;
-  background: ${(p) => (p.backgroundChange ? "white" : "#252525")};
+  background: ${p => p.backgroundChange};
   color: white;
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Montserrat', sans-serif;
-  transition: 2s all;
+  transition: 2s background;
 }
 `;
 
@@ -28,7 +28,7 @@ const App = () => {
   const [backgroundChange, setBackgroundChange] = useState(false);
 
   const scrollListner = () => {
-    if (window.pageYOffset > window.innerHeight * 2) {
+    if (window.pageYOffset > window.innerHeight * 1) {
       setBackgroundChange(true);
       console.log("true");
     } else {
@@ -37,22 +37,34 @@ const App = () => {
     }
   };
 
+  const TopRef = useRef();
+  const SummarizeRef = useRef();
+  const ProjectsRef = useRef();
+
   useEffect(() => {
+    setBackgroundChange(false)
     window.addEventListener("scroll", scrollListner);
+
+
+
     return () => {
       window.removeEventListener("scroll", scrollListner);
     };
+
+
   }, []);
+
 
   return (
     <>
-      <Header />
+      <Header Topref={TopRef} SummarizeRef={SummarizeRef} ProjectsRef={ProjectsRef} />
       <ParallaxProvider>
         <AppContainer>
-          <GlobalStyle backgroundChange={backgroundChange} />
-          <Introduction />
-          <Summarize />
-          <Projects />
+          <GlobalStyle
+          backgroundChange={backgroundChange ? "#0d0d0d" : "#252525"} />
+          <Introduction refProp={TopRef} />
+          <Summarize refProp={SummarizeRef} />
+          <Projects refProp={ProjectsRef} />
         </AppContainer>
       </ParallaxProvider>
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Face from "./Face";
 import Title from "./Title";
@@ -9,9 +9,11 @@ const Container = styled.div`
   position: relative;
 `;
 
-const Introduction = () => {
+const Introduction = (props) => {
+  const {refProp} = props 
+ 
   return (
-    <Container>
+    <Container ref={refProp}>
       <Title />
       {/* <Face /> */}
     </Container>

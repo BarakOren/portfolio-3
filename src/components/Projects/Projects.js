@@ -8,11 +8,13 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 100px 0;
 `;
 
-const Projects = () => {
+const Projects = (props) => {
+  const {refProp} = props
   return (
-    <Container>
+    <Container ref={refProp}>
       {Data.map((project, i) => {
         return <Project key={i} project={project}/>
       })}

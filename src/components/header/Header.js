@@ -47,18 +47,30 @@ const StyledLink = styled.p`
     }
 `
 
-const Header = () => {
-
+const Header = (props) => {
+    const {ProjectsRef, SummarizeRef, Topref} = props
     const location = useLocation().pathname;
+    console.log(props)
+    const ScrollTo = (ref) => {
+        console.log(ref)
+        ref.current.scrollIntoView({behavior: 'smooth'})   
+     }
+
+    //  <StyledLink 
+    //  style={{color: location === "/" ? "white" : "", textShadow: location === "/" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}}  
+    //  onClick={() => ScrollTo(Topref)}
+    //  >Top</StyledLink>
 
     return(
             <Container>
                 <Name>Barak Oren</Name>
                 <Links >
-                    <StyledLink style={{color: location === "/" ? "white" : "", textShadow: location === "/" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} to="/" >About</StyledLink>
-                    <StyledLink style={{color: location === "/projects" ? "white" : "", textShadow: location === "/projects" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} to="/projects" >Projects</StyledLink>
-                    <StyledLink style={{color: location === "/designs" ? "white" : "", textShadow: location === "/designs" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} to="/designs" >Designs</StyledLink>
-                    <StyledLink style={{color: location === "/contact" ? "white" : "", textShadow: location === "/contact" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} to="/contact" >Contact</StyledLink>  
+                    <StyledLink style={{color: location === "/projects" ? "white" : "", textShadow: location === "/projects" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} 
+                    onClick={() => ScrollTo(SummarizeRef)}
+                    >Summarize</StyledLink>
+                    <StyledLink style={{color: location === "/contact" ? "white" : "", textShadow: location === "/contact" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} 
+                    onClick={() => ScrollTo(ProjectsRef)}
+                    >Projects</StyledLink>  
                 </Links>
         </Container>
     )

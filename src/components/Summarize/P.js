@@ -3,7 +3,7 @@ import { Parallax } from 'react-scroll-parallax';
 
 const P = styled.p`
     font-size: 24px;
-    margin: 5px 0;
+    margin: 30px 0;
 `
 
 const Para = (props) => {

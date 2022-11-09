@@ -9,14 +9,16 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 200px 0;
 `
 
 
 
 
-const Summarize = () => {
-    const Y = ['-100px', '100px']
-    return <Container>
+const Summarize = (props) => {
+    const {refProp} = props
+    const Y = ['-200px', '100px']
+    return <Container ref={refProp}>
         <Para 
         text={'Adaptable Front-End Developer with 2 years of developing experience.'}
         X={[-30, 30]}

@@ -26,6 +26,7 @@ const Prof = styled.h1`
 
 const Title = () => {
   const endScroll = 700;
+  const Y = ['0px', '300px']
 
   return (
     <Container>
@@ -34,6 +35,7 @@ const Title = () => {
         endScroll={endScroll}
         opacity={[1, 0]}
         translateX={[0, 70]}
+        translateY={Y}
       >
         <Name>XXXXX XXXX</Name>
       </Parallax>
@@ -42,6 +44,7 @@ const Title = () => {
         endScroll={endScroll}
         opacity={[1, 0]}
         translateX={[0, -50]}
+        translateY={Y}
       >
         <Prof>Front End Developer</Prof>
       </Parallax>
