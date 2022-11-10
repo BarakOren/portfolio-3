@@ -1,79 +1,107 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import styled from "styled-components";
+import { Parallax } from "react-scroll-parallax";
+
+const ParallexContainer = styled(Parallax)`
+  height: 80px;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 0;
+`;
 
 const Container = styled.header`
-    z-index: 0;
-    background-color: transparent;
-    height: 80px;
-    width: 90vw;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 1;
-    align-items: center;
-    @media only screen and (max-width: 800px){
-        display: none;
-}
-`
+  display: flex;
+  width: 90%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 1;
+  align-items: center;
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+`;
 
 const Name = styled.p`
-    margin: 0 0;    
-`
+  margin: 0 0;
+`;
 
 const Links = styled.div`
-    margin: 0 0;
-    width: 70vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-`
+  margin: 0 0;
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+`;
 
 const StyledLink = styled.p`
-    text-decoration: none;
-    font-size: 1.7vw;
-    margin: 0% 0 0 5%;
-    transition: all .5s;
-    color: rgb(212, 212, 212);
-    &:hover{
-        color: rgb(255, 255, 255);
-        text-shadow: 2px 2px 10px rgb(255,255,255, 0.8);
-        cursor: pointer;
-    }
-`
+  text-decoration: none;
+  font-size: 1.7vw;
+  margin: 0% 0 0 5%;
+  transition: all 0.5s;
+  color: rgb(212, 212, 212);
+  &:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 10px rgb(255, 255, 255, 0.8);
+    cursor: pointer;
+  }
+`;
 
 const Header = (props) => {
-    const {ProjectsRef, SummarizeRef, Topref} = props
-    const location = useLocation().pathname;
-    console.log(props)
-    const ScrollTo = (ref) => {
-        console.log(ref)
-        ref.current.scrollIntoView({behavior: 'smooth'})   
-     }
+  const { ProjectsRef, SummarizeRef } = props;
+  const location = useLocation().pathname;
+  const ScrollTo = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
 
-    //  <StyledLink 
-    //  style={{color: location === "/" ? "white" : "", textShadow: location === "/" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}}  
-    //  onClick={() => ScrollTo(Topref)}
-    //  >Top</StyledLink>
+  //  <StyledLink
+  //  style={{color: location === "/" ? "white" : "", textShadow: location === "/" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}}
+  //  onClick={() => ScrollTo(Topref)}
+  //  >Top</StyledLink>
 
-    return(
-            <Container>
-                <Name>Barak Oren</Name>
-                <Links >
-                    <StyledLink style={{color: location === "/projects" ? "white" : "", textShadow: location === "/projects" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} 
-                    onClick={() => ScrollTo(SummarizeRef)}
-                    >Summarize</StyledLink>
-                    <StyledLink style={{color: location === "/contact" ? "white" : "", textShadow: location === "/contact" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}} 
-                    onClick={() => ScrollTo(ProjectsRef)}
-                    >Projects</StyledLink>  
-                </Links>
-        </Container>
-    )
-}
+  return (
+    <ParallexContainer
+      translateY={["0px", "700px"]}
+      startScroll={10}
+      endScroll={800}
+    >
+      <Container>
+        <Name>Barak Oren</Name>
+        <Links>
+          <StyledLink
+            style={{
+              color: location === "/projects" ? "white" : "",
+              textShadow:
+                location === "/projects"
+                  ? "2px 2px 10px rgb(255,255,255, 0.8)"
+                  : ""
+            }}
+            onClick={() => ScrollTo(SummarizeRef)}
+          >
+            Summarize
+          </StyledLink>
+          <StyledLink
+            style={{
+              color: location === "/contact" ? "white" : "",
+              textShadow:
+                location === "/contact"
+                  ? "2px 2px 10px rgb(255,255,255, 0.8)"
+                  : ""
+            }}
+            onClick={() => ScrollTo(ProjectsRef)}
+          >
+            Projects
+          </StyledLink>
+        </Links>
+      </Container>
+    </ParallexContainer>
+  );
+};
 
 export default Header;

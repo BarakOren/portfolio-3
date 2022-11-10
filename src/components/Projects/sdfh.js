@@ -3,7 +3,6 @@ import { Parallax, ParallaxBannerLayer } from "react-scroll-parallax";
 import Image from "./Image";
 import Button from "./Button";
 
-
 const Container = styled.div`
   width: 90%;
   height: 100vh;
@@ -35,17 +34,15 @@ border-radius: 8px;
 
 `;
 
-
 const DetailsContainer = styled.div`
-width: 40%;
-transition: .2s all;
-&:hover{
-  cursor: default;
-  transform: scale(1.1);
-}
+  width: 40%;
+  transition: 0.2s all;
+  &:hover {
+    cursor: default;
+    transform: scale(1.1);
+  }
 
-
-// height: 100%;
+  // height: 100%;
 `;
 
 const Title = styled.h1`
@@ -73,38 +70,36 @@ const ButtonsContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-`
+`;
 
 const Project = (props) => {
-  const {name,info,subInfo,image,website,github} = props.project;
+  const { name, info, subInfo, image, website, github } = props.project;
+  console.log(github === null);
   return (
     <Container>
-      <Image img={image}/>
+      <Image img={image} />
 
-        <DetailsContainer>
-         <ParallaxStyle
-         rotateY={[-35,0]}
-         rotateX={[-35,0]}
-         scale={[0.9, 1]}
-         translateX={['30px', '0px']}
-         >
-
+      <DetailsContainer>
+        <ParallaxStyle
+          rotateY={[-35, 0]}
+          rotateX={[-35, 0]}
+          scale={[0.9, 1]}
+          translateX={["30px", "0px"]}
+        >
           <Title>{name}</Title>
           <Summarize>{info}</Summarize>
           <BulletContainer>
             {subInfo.map((info, i) => {
-              return <Bullet>{info}</Bullet>
+              return <Bullet>{info}</Bullet>;
             })}
           </BulletContainer>
 
           <ButtonsContainer>
-          <Button text={'github'} link={github} />
-          <Button text={'website'} link={website} />
+            <Button text={"github"} disabled={github === null} link={github} />
+            <Button text={"website"} link={website} />
           </ButtonsContainer>
-
         </ParallaxStyle>
-        </DetailsContainer>
-      
+      </DetailsContainer>
     </Container>
   );
 };
