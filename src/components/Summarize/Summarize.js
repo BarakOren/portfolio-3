@@ -15,9 +15,10 @@ const Container = styled.div`
 
 const ParallexContainer = styled(Parallax)`
   width: 200%;
-  height: 30px;
+  height: 200px;
   position: absolute;
   top: 0;
+  opacity: 0.5;
   left: -150px;
 `;
 
@@ -31,6 +32,7 @@ const Flare = styled.div`
     rgba(255, 175, 0, 0) 100%
   );
   border-radius: 30px;
+  filter: blur(20px);
   box-shadow: -50px 0 50px #ffaf0033;
 `;
 
@@ -61,13 +63,13 @@ const Summarize = (props) => {
         }
       />
 
-      <ParallexContainer
+      {/* <ParallexContainer
         rotate={[0, 30]}
         opacity={[0.5, 1]}
         translateX={[0, 10]}
       >
         <Flare />
-      </ParallexContainer>
+      </ParallexContainer> */}
     </Container>
   );
 };

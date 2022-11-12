@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
 import styled from "styled-components";
 import { Parallax } from "react-scroll-parallax";
 
@@ -12,7 +10,9 @@ const ParallexContainer = styled(Parallax)`
   justify-content: center;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 10;
+  
+
 `;
 
 const Container = styled.header`
@@ -21,7 +21,6 @@ const Container = styled.header`
   height: 100%;
   flex-direction: row;
   justify-content: space-between;
-  z-index: 1;
   align-items: center;
   @media only screen and (max-width: 800px) {
     display: none;
@@ -55,15 +54,9 @@ const StyledLink = styled.p`
 
 const Header = (props) => {
   const { ProjectsRef, SummarizeRef } = props;
-  const location = useLocation().pathname;
   const ScrollTo = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
-
-  //  <StyledLink
-  //  style={{color: location === "/" ? "white" : "", textShadow: location === "/" ? "2px 2px 10px rgb(255,255,255, 0.8)" : ""}}
-  //  onClick={() => ScrollTo(Topref)}
-  //  >Top</StyledLink>
 
   return (
     <ParallexContainer
@@ -75,25 +68,11 @@ const Header = (props) => {
         <Name>Barak Oren</Name>
         <Links>
           <StyledLink
-            style={{
-              color: location === "/projects" ? "white" : "",
-              textShadow:
-                location === "/projects"
-                  ? "2px 2px 10px rgb(255,255,255, 0.8)"
-                  : ""
-            }}
             onClick={() => ScrollTo(SummarizeRef)}
           >
             Summarize
           </StyledLink>
           <StyledLink
-            style={{
-              color: location === "/contact" ? "white" : "",
-              textShadow:
-                location === "/contact"
-                  ? "2px 2px 10px rgb(255,255,255, 0.8)"
-                  : ""
-            }}
             onClick={() => ScrollTo(ProjectsRef)}
           >
             Projects

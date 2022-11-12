@@ -11,6 +11,7 @@ const Container = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin: 50px 0;
+  /* position: relative; */
 `;
 
 const ParallaxStyle = styled(Parallax)`

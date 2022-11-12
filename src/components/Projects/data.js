@@ -1,8 +1,8 @@
-import sp from "../../assets/sp.jpg";
-import coffee from "../../assets/coffee2.jpg";
-import Writer from "../../assets/writer-1.png";
-import NuxtBlog from "../../assets/cryptoblog.jpg";
-import webflow from "../../assets/webflow.jpg";
+import sp from "../../assets/spotfinder-gif.gif";
+import coffee from "../../assets/coffee-gif.gif";
+import Writer from "../../assets/writer-gif.gif";
+import NuxtBlog from "../../assets/crypto-gif.gif";
+import webflow from "../../assets/webflow-gif.gif";
 
 export const Data = [
   {
