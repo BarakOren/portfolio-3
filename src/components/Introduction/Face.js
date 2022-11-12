@@ -7,7 +7,7 @@ const Container = styled.div`
     height: 90%;
     position: absolute;
     top: -150px;
-    z-index: -1;
+    z-index: 0;
 `
 
 const FaceImg = styled.img`
@@ -26,8 +26,6 @@ const Face = () => {
         <FaceImg src={FaceImage} alt="face" />
         </Parallax>
         </Container>
-
-    
 }
 
 export default Face;

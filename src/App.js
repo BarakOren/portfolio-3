@@ -17,6 +17,21 @@ body {
   color: white;
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Montserrat', sans-serif;
+
+  
+::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+  background-color: ${(p) => p.backgroundChange};
+  transition: 1s background-color;
+}
+::-webkit-scrollbar-thumb{
+  background: rgb(68, 68, 68);
+  border-radius: 6px ;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #8e8d8f;
+}
 }
 `;
 
@@ -55,7 +70,7 @@ const App = () => {
     <ParallaxProvider>
       <Header SummarizeRef={SummarizeRef} ProjectsRef={ProjectsRef} />
       <AppContainer backgroundChange={backgroundChange ? "#0d0d0d" : "#252525"}>
-        <GlobalStyle />
+        <GlobalStyle backgroundChange={backgroundChange ? "#0d0d0d" : "#252525"} />
         <Introduction refProp={TopRef} />
         <Summarize refProp={SummarizeRef} />
         <Projects refProp={ProjectsRef} />

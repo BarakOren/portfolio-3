@@ -2,6 +2,20 @@ import styled from "styled-components";
 import Para from "./P";
 import { Parallax } from "react-scroll-parallax";
 
+
+// const Flare = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   background: rgb(255, 192, 0);
+//   background: linear-gradient(
+//     90deg,
+//     rgba(255, 192, 0, 0.3) 0%,
+//     rgba(255, 175, 0, 0) 100%
+//   );
+//   border-radius: 0%;
+//   opacity: 0.3;
+// `;
+
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -14,27 +28,21 @@ const Container = styled.div`
 `;
 
 const ParallexContainer = styled(Parallax)`
-  width: 200%;
-  height: 200px;
+  width: 60vw;
+  height: 30vh;
   position: absolute;
-  top: 0;
-  opacity: 0.5;
-  left: -150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Flare = styled.div`
+
+const Frame = styled.div`
   width: 100%;
   height: 100%;
-  background: rgb(255, 192, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 192, 0, 0.3) 0%,
-    rgba(255, 175, 0, 0) 100%
-  );
-  border-radius: 30px;
-  filter: blur(20px);
-  box-shadow: -50px 0 50px #ffaf0033;
-`;
+  border: 1px solid white;
+`
 
 const Summarize = (props) => {
   const { refProp } = props;
@@ -63,13 +71,14 @@ const Summarize = (props) => {
         }
       />
 
-      {/* <ParallexContainer
-        rotate={[0, 30]}
-        opacity={[0.5, 1]}
-        translateX={[0, 10]}
+      <ParallexContainer
+        // rotate={[0, 30]}
+        opacity={[0, 1]}
+        translateX={[-40, 40]}
+        translateY={Y}
       >
-        <Flare />
-      </ParallexContainer> */}
+        <Frame />
+      </ParallexContainer>
     </Container>
   );
 };
