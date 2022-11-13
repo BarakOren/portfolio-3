@@ -7,6 +7,7 @@ import Summarize from "./components/Summarize/Summarize";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import BackToTop from "./components/BackToTop";
+import LogosSection from "./components/LogosSection/LogosSection"
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -56,9 +57,10 @@ const App = () => {
   const TopRef = useRef();
   const SummarizeRef = useRef();
   const ProjectsRef = useRef();
+  const ContactRef = useRef()
 
   useEffect(() => {
-    setBackgroundChange(false);
+    scrollListner()
     window.addEventListener("scroll", scrollListner);
 
     return () => {
@@ -68,13 +70,14 @@ const App = () => {
 
   return (
     <ParallaxProvider>
-      <Header SummarizeRef={SummarizeRef} ProjectsRef={ProjectsRef} />
+      <Header ContactRef={ContactRef} SummarizeRef={SummarizeRef} ProjectsRef={ProjectsRef} />
       <AppContainer backgroundChange={backgroundChange ? "#0d0d0d" : "#252525"}>
         <GlobalStyle backgroundChange={backgroundChange ? "#0d0d0d" : "#252525"} />
         <Introduction refProp={TopRef} />
         <Summarize refProp={SummarizeRef} />
+        <LogosSection />
         <Projects refProp={ProjectsRef} />
-        <Contact />
+        <Contact refProp={ContactRef} />
         <BackToTop refProp={TopRef} />
       </AppContainer>
     </ParallaxProvider>

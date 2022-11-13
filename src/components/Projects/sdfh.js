@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Parallax, ParallaxBannerLayer } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 import Image from "./Image";
 import Button from "./Button";
+import Logos from "./logos"
 
 const Container = styled.div`
   width: 90%;
@@ -23,16 +24,7 @@ flex-direction: column;
 align-items: center;
 justify-content: flex-start;
 gap: 30px;
-perspective(400px);
 border-radius: 8px;
-
-
-
-// box-shadow: 0 30px 100px rgba(255,255,255,0.3);
-
-// background: rgb(255,224,111);
-// background: linear-gradient(229deg, rgba(255,224,111,1) 0%, rgba(0,212,255,0) 60%);
-
 `;
 
 const DetailsContainer = styled.div`
@@ -74,7 +66,7 @@ const ButtonsContainer = styled.div`
 `;
 
 const Project = (props) => {
-  const { name, info, subInfo, image, website, github } = props.project;
+  const { name, info, subInfo, image, website, github, tech } = props.project;
   console.log(github === null);
   return (
     <Container>
@@ -95,11 +87,14 @@ const Project = (props) => {
             })}
           </BulletContainer>
 
+          <Logos tech={tech}/>
+
           <ButtonsContainer>
             <Button text={"github"} disabled={github === null} link={github} />
             <Button text={"website"} link={website} />
           </ButtonsContainer>
         </ParallaxStyle>
+
       </DetailsContainer>
     </Container>
   );

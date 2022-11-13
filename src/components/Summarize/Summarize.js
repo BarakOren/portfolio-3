@@ -1,20 +1,7 @@
 import styled from "styled-components";
 import Para from "./P";
 import { Parallax } from "react-scroll-parallax";
-
-
-// const Flare = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   background: rgb(255, 192, 0);
-//   background: linear-gradient(
-//     90deg,
-//     rgba(255, 192, 0, 0.3) 0%,
-//     rgba(255, 175, 0, 0) 100%
-//   );
-//   border-radius: 0%;
-//   opacity: 0.3;
-// `;
+import {ReactLogo} from '@styled-icons/fa-brands/ReactLogo'
 
 const Container = styled.div`
   width: 100%;
@@ -44,11 +31,21 @@ const Frame = styled.div`
   border: 1px solid white;
 `
 
+const React = styled(ReactLogo)`
+    color: #61DBFB;
+    filter: blur(10px) drop-shadow(-30px 30px 40px #61DBFB);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+`
+
 const Summarize = (props) => {
   const { refProp } = props;
   const Y = ["-200px", "100px"];
   return (
     <Container ref={refProp}>
+    
       <Para
         text={
           "Adaptable Front-End Developer with 2 years of developing experience."
@@ -70,15 +67,14 @@ const Summarize = (props) => {
           "Writing high level of clean code and passion for user experience and clean UI designs."
         }
       />
-
       <ParallexContainer
-        // rotate={[0, 30]}
         opacity={[0, 1]}
         translateX={[-40, 40]}
         translateY={Y}
       >
-        <Frame />
+        <Frame style={{zIndex: 2}}/>
       </ParallexContainer>
+    
     </Container>
   );
 };

@@ -4,6 +4,7 @@ import {Github} from '@styled-icons/bootstrap/Github'
 import CopyButton from "./CopyButton"
 import {useState} from "react";
 import { Parallax } from "react-scroll-parallax";
+
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -13,6 +14,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px 0;
+  position: relative;
 `;
 
 const Row = styled.div`
@@ -20,6 +22,7 @@ const Row = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 5;
 `
 
 const EmailIcon = styled(EmailOutline)`
@@ -72,7 +75,46 @@ const StyledParallex = styled(Parallax)`
   height: 100%;
 `
 
-const Contact = () => {
+const TextBox = styled.div`
+  position: absolute;
+  top: 50%;
+  left: -5vw;
+  transform: translateY(-20%);
+  width: 50vw;
+  height: 300px;
+`
+
+const Relative = styled.div`
+  width: 100%;
+  height: 100%;
+  left: 100%;
+  position: relative;
+`
+
+const Fader = styled.div`
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 180%;
+  height: 100%;
+  background: rgb(37,37,37);
+background: linear-gradient(90deg, rgba(37,37,37,0) 10%, rgba(13,13,13,1) 90%);
+z-index: 1;
+`
+
+const Text = styled.h1`
+  font-size: 300px;
+  letter-spacing: -20px;
+  position: absolute;
+  top: -0%;
+  left: -5%;
+  opacity: 0.5;
+  margin: 0;
+`
+
+const Contact = (props) => {
+  const {refProp} = props
+
   const [clicked, setClicked] = useState(false);
   const CopyText = () => {
     navigator.clipboard.writeText("barakoren5@gmail.com")
@@ -86,9 +128,8 @@ const Contact = () => {
     window.open('https://github.com/BarakOren', '_blank');
   } 
      
-  return <StyledParallex opacity={[0.7, 1]} translateX={['-50px', '50px']}> 
-  <Container>
-    
+  return <StyledParallex opacity={[0.7, 1]} > 
+  <Container ref={refProp}>
     <Row>
       <CopyButton text={'Email'} action={CopyText} />
       <Copied clicked={clicked}>Copied!</Copied>
@@ -97,6 +138,14 @@ const Contact = () => {
       <CopyButton text={'Github'} action={openLink} />
     </Row>
     </Container>
+    <TextBox>
+      <Relative>
+        <Fader></Fader>
+      </Relative>
+      <Parallax style={{position: 'absolute', top: 0}} opacity={[0, 1]} translateX={['-100px', '0px']}>
+      <Text>Contact</Text>
+      </Parallax>
+    </TextBox>
     </StyledParallex>
 };
 

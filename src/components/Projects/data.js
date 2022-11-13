@@ -1,4 +1,4 @@
-import sp from "../../assets/spotfinder-gif.gif";
+import sp from "../../assets/sp-gif.gif";
 import coffee from "../../assets/coffee-gif.gif";
 import Writer from "../../assets/writer-gif.gif";
 import NuxtBlog from "../../assets/crypto-gif.gif";
@@ -15,6 +15,7 @@ export const Data = [
       "built with React and Firebase."
     ],
     image: sp,
+    tech: ['React', 'StyledcomponentsLogo', 'FirebaseLogo', 'MapboxLogo'],
     website: "https://spotfinder-e8871.web.app/",
     github: "https://github.com/BarakOren/spot-finder"
   },
@@ -28,6 +29,7 @@ export const Data = [
       "Designed the app and website with Figma."
     ],
     image: Writer,
+    tech: ['React', 'ReduxLogo', 'StyledcomponentsLogo'],
     website: "https://barakoren.github.io/WriterApp/",
     github: "https://github.com/BarakOren/WriterApp"
   },
@@ -36,6 +38,7 @@ export const Data = [
     info: "Crypto coins blog built with NUXT",
     subInfo: ["Built with Nuxt, TailwindCSS, and Firebase"],
     image: NuxtBlog,
+    tech: ['Nuxt', 'TailWind', 'FirebaseLogo'],
     website: "https://barakoren.github.io/NuxtCryptoBlog/",
     github: "https://github.com/BarakOren/NuxtCryptoBlog"
   },
@@ -44,6 +47,7 @@ export const Data = [
     info: "Discover the best and closest coffee shops with Next.js",
     subInfo: ["Built with Next.js."],
     image: coffee,
+    tech: ['NextLogo'],
     website: "https://coffee-discovery-e245nvyeo-defqon32.vercel.app/",
     github: "https://github.com/BarakOren/coffee-discovery"
   },
@@ -52,6 +56,7 @@ export const Data = [
     info: "My portfolio website using Webflow",
     subInfo: [],
     image: webflow,
+    tech: ['WebflowLogo'],
     website: "https://barak-oren.webflow.io/",
     github: null
   }

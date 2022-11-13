@@ -37,7 +37,7 @@ const Title = () => {
         translateX={[0, 70]}
         translateY={Y}
       >
-        <Name>XXXXX XXXX</Name>
+        <Name>BARAK OREN</Name>
       </Parallax>
       <Parallax
         startScroll={10}

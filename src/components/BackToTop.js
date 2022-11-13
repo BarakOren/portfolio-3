@@ -1,12 +1,20 @@
 import styled from "styled-components";
+import {ArrowheadUpOutline} from '@styled-icons/evaicons-outline/ArrowheadUpOutline'
 
 const Container = styled.div`
   width: 100%;
   height: 30vh;
 `;
 
-const Button = styled.button`
+const Button = styled(ArrowheadUpOutline)`
   background: none;
+  transition: .2s all;
+  &:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px #ffffff55);
+  }
+
 `;
 
 const BackToTop = (props) => {
@@ -18,7 +26,7 @@ const BackToTop = (props) => {
 
   return (
     <Container>
-      <Button onClick={() => ScrollTo(refProp)}>TOP</Button>
+      <Button size="50" onClick={() => ScrollTo(refProp)}>TOP</Button>
     </Container>
   );
 };

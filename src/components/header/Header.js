@@ -53,7 +53,7 @@ const StyledLink = styled.p`
 `;
 
 const Header = (props) => {
-  const { ProjectsRef, SummarizeRef } = props;
+  const { ProjectsRef, SummarizeRef, ContactRef } = props;
   const ScrollTo = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -76,6 +76,11 @@ const Header = (props) => {
             onClick={() => ScrollTo(ProjectsRef)}
           >
             Projects
+          </StyledLink>
+          <StyledLink
+            onClick={() => ScrollTo(ContactRef)}
+          >
+            Contact
           </StyledLink>
         </Links>
       </Container>
