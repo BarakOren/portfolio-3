@@ -10,6 +10,16 @@ import {Styledcomponents} from '@styled-icons/simple-icons/Styledcomponents'
 import {Nextdotjs} from '@styled-icons/simple-icons/Nextdotjs'
 import {Figma} from '@styled-icons/fa-brands/Figma'
 
+const Container = styled.div`
+    width: 100vw;
+    height: 110vh;
+    margin: 100px 0 200px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 150px 0;
+`
 
 const Label = styled.p`
     position: absolute;
@@ -103,12 +113,11 @@ const FigmaLogo = styled(Figma)`
 
 const FlexBox = styled(Parallax)`
     width: 100vw;
-    height: 100vh;
-    margin: 100px 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    // margin: 100px 0;
 `
 
 const IconContainer = styled.div`
@@ -116,7 +125,6 @@ const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 50%;
     width: ${p => p.width};
     // margin: 50px 0;
     `
@@ -125,31 +133,55 @@ const IconContainer = styled.div`
 
 const LogosSection = () => {
     
-    return <FlexBox
+    const mainIconsSize = '18vw'
+    const subIconsSize = '10vw'
+
+    return <Container>
+        
+        <FlexBox
         translateY={['-100px', '100px']}
         scale={[1, 1.2]}
         >
-        <IconContainer width={"30%"}>
-        <React color={'61DBFB'} size={'200'}  /> 
-        <Label color={'61DBFB'} fontSize={'60'} top={'-30'}>React</Label>
+        <IconContainer >
+        <React color={'61DBFB'} size={mainIconsSize}  /> 
+        <Label color={'61DBFB'} fontSize={'60'} top={'-40'}>React</Label>
         </IconContainer>
 
-        <IconContainer width={"30%"}>
-        <ReduxLogo color={'764abc'} size={'200'}  /> 
-        <Label color={'764abc'} fontSize={'60'} top={'-30'}>Redux</Label>
+        <IconContainer >
+        <ReduxLogo color={'764abc'} size={mainIconsSize}  /> 
+        <Label color={'764abc'} fontSize={'60'} top={'-40'}>Redux</Label>
         </IconContainer>
         
-        <IconContainer width={"30%"}>
-        <StyledComponentsLogo color={'ffd561'}   />
-        <Label color={'ffd561'} fontSize={'40'} top={'-30'}>Styled-Components</Label>
+        <IconContainer >
+        <StyledComponentsLogo size={'20vw'} color={'ffd561'}   />
+        <Label color={'ffd561'} fontSize={'40'} top={'-40'}>Styled-Components</Label>
+        </IconContainer>
+        </FlexBox>
+
+        <FlexBox
+        translateY={['-100px', '100px']}
+        scale={[1, 1.2]}
+        >
+        <IconContainer>
+        <FigmaLogo color={'ffd561'} size={subIconsSize} />
+        <Label color={'ffd561'} fontSize={'20'} top={'40'}>Styled-Components</Label>
+        </IconContainer>
+        
+        <IconContainer>
+        <FigmaLogo color={'ffd561'} size={subIconsSize} />
+        <Label color={'ffd561'} fontSize={'20'} top={'40'}>Styled-Components</Label>
         </IconContainer>
 
         <IconContainer>
-        <FigmaLogo color={'ffd561'} size={'80'} />
+        <FigmaLogo color={'ffd561'} size={subIconsSize} />
         <Label color={'ffd561'} fontSize={'20'} top={'40'}>Styled-Components</Label>
         </IconContainer>
 
         </FlexBox>
+       
+
+
+        </Container>
 }
 
 export default LogosSection;

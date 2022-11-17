@@ -32,7 +32,6 @@ const Label = styled.p`
     width: 100%;
     text-align: center;
     filter: blur(2px);
-
 `
 
 const React = styled(ReactLogo)`

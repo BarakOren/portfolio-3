@@ -103,7 +103,7 @@ z-index: 1;
 `
 
 const Text = styled.h1`
-  font-size: 300px;
+  font-size: 20vw;
   letter-spacing: -20px;
   position: absolute;
   top: -0%;

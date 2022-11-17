@@ -75,7 +75,6 @@ const App = () => {
         <GlobalStyle backgroundChange={backgroundChange ? "#0d0d0d" : "#252525"} />
         <Introduction refProp={TopRef} />
         <Summarize refProp={SummarizeRef} />
-        <LogosSection />
         <Projects refProp={ProjectsRef} />
         <Contact refProp={ContactRef} />
         <BackToTop refProp={TopRef} />
