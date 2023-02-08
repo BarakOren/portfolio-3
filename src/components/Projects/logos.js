@@ -8,6 +8,8 @@ import {Webflow} from '@styled-icons/simple-icons/Webflow'
 import {Styledcomponents} from '@styled-icons/simple-icons/Styledcomponents'
 import {Nextdotjs} from '@styled-icons/simple-icons/Nextdotjs'
 import {Mapbox} from '@styled-icons/simple-icons/Mapbox'
+import {Mongodb} from '@styled-icons/simple-icons/Mongodb'
+import {Nodejs} from '@styled-icons/boxicons-logos/Nodejs'
 
 
 const Container = styled.div`
@@ -192,6 +194,42 @@ const MapboxLogo = styled(Mapbox)`
     }
 `
 
+
+const MongodbLogo = styled(Mongodb)`
+    color: ${p => `#${p.color}`};
+    filter: ${p => `drop-shadow(3px 3px 4px #${p.color}55)`} ;
+    transition: .2s all;
+    position: relative;
+    &:hover {
+    filter: ${p => `drop-shadow(3px 3px 4px #${p.color})`} ;
+    transform: scale(1.1);
+    }
+    &:hover ~ ${Label} {
+        opacity: 1;
+        transform: scale(1.1);
+        left: 0%;
+        filter: blur(0);
+    }
+`
+
+
+const NodejsLogo = styled(Nodejs)`
+    color: ${p => `#${p.color}`};
+    filter: ${p => `drop-shadow(3px 3px 4px #${p.color}55)`} ;
+    transition: .2s all;
+    position: relative;
+    &:hover {
+    filter: ${p => `drop-shadow(3px 3px 4px #${p.color})`} ;
+    transform: scale(1.1);
+    }
+    &:hover ~ ${Label} {
+        opacity: 1;
+        transform: scale(1.1);
+        left: 0%;
+        filter: blur(0);
+    }
+`
+
 const IconContainer = styled.div`
     width: 50px;
     height: 50px;
@@ -200,6 +238,8 @@ const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
 `
+
+
 
 
 const Logos = (props) => {
@@ -261,6 +301,19 @@ const Logos = (props) => {
             <Label color={'4353FF'}>Webflow</Label> 
             </IconContainer>
             }
+            {t === 'NodejsLogo' && 
+            <IconContainer>
+            <NodejsLogo color={'70e30f'} size={size} />
+            <Label color={'70e30f'}>Node.js</Label> 
+            </IconContainer>
+            }
+            {t === 'MongodbLogo' && 
+            <IconContainer>
+            <MongodbLogo color={'2edd1f'} size={size} />
+            <Label color={'2edd1f'}>Mongodb</Label> 
+            </IconContainer>
+            }
+             
             </>
                             
         })}

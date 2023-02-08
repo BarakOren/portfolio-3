@@ -3,8 +3,21 @@ import coffee from "../../assets/coffee-gif.gif";
 import Writer from "../../assets/writer-gif.gif";
 import NuxtBlog from "../../assets/crypto-gif.gif";
 import webflow from "../../assets/webflow-gif.gif";
+import rotem from "../../assets/rotembrum.gif";
 
 export const Data = [
+  {
+    name: "Rotem Brum's Portfolio",
+    info:
+      "Freelance portfolio website for a designer and a calligraphy artist.",
+    subInfo: [
+      "built with MERN stack.",
+    ],
+    image: rotem,
+    tech: ['React', 'StyledcomponentsLogo', 'NodejsLogo', 'MongodbLogo'],
+    website: "https://rotem-brum.info/",
+    github: null
+  },
   {
     name: "Spot Finder",
     info:
